@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- code to usebootstrap  -->
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+    crossorigin="anonymous">
+    <!-- code to show social media links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+    integrity="sha512-wf3TIsxH0S8tLWgR9Xz4QZ97M4s8sM4GLvv/+ehBwrxOGkZeMH1zmOBQDwmzYXJl60eMIiZNEKfvlW10GkscDw==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- for css  type="text/css" -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+   
+
+
+    <title>{% block title %}My Site{% endblock %}</title>
+</head>
+    
+<body class="background-div" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create-comment">Comment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/reviews">Reviews</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul class="navbar-nav">
+                    {% if user.is_superuser %}
+                    <span class="navbar-text">Website owner is Logged in as Keith Mpala | </span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    {% elif user.is_authenticated %}
+                    <span class="navbar-text"> Logged in as {{user.username}} | </span>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">{% block content %} {% endblock %}</div>
+    <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+    crossorigin="anonymous"></script>
+
+    <!-- Code for fb, github link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" 
+    integrity="sha512-h+oFvJ4Wzks8VI/vvlA4+VwSvSdG91GM8WEhF7Xu0Os0dBY7oOz+oLLV7Q2wjbsc06Z7rU6E5NVlH9lC9E3PzQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"></script>
+
+    <!-- Code for java script -->
+    <script src="{% static 'custom.js' %}"></script>
+    
+</body>
+  
+</html>

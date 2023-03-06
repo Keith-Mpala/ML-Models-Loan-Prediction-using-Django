@@ -1,0 +1,98 @@
+{% extends 'authentication/base.html' %} 
+{% block title %}Results{% endblock %}
+{% load crispy_forms_tags %} 
+{% block content %} 
+{% load static %}
+
+
+<body>
+    <h3 class="center"> <strong>Machine Learning Model Results</strong> </h3>
+    <p>
+        Results of the model predictions are in probabilistic form and they determine a binary classification 
+        result of whether Loan is will be Fully Paid or Defaulted based on client loan profile. 
+    </p>      
+    <div class="container">
+        <p>
+            * It is paramount to understand and interpret the results of the model for the model to be effective in decision-making  *
+        </p>
+        <p>* Please verify Loan details are correctly entered *</p>
+    </div>
+   
+    <h4 class="center"><strong>Loan Data Inputs</strong> </h4>
+    <div class="row">
+        <div class="col-md-12">
+            {{ html_table1|safe }}
+        </div>
+        <div class="col-md-12">
+            {{ html_table2|safe }}
+        </div>
+    </div>
+    <br>
+
+<strong></strong>
+    <div class="center" class="container">
+        <h4> <strong> Probability of Fully Paid</strong> </h4>
+
+        <p>Random Forest Classifier :: <strong>{{ rf_pred }}</strong></p>
+        <p>Boosting Classifier :: <strong>{{ bg_pred }}</strong></p>
+        <p>Xgboost Classifier :: <strong>{{ xg_pred }}</strong></p>
+        <p>Logistic Regression :: <strong>{{ lg_pred }}</strong></p>
+    </div>
+    <br>
+    <h3>Interpretation of Model results</h3>
+    <li>A lower Probability (below 0.5) shows a high chance that Loan will be Charged Off (defaulted).</li>
+    <em><p>* Further action needs to be taken for such loans.</p></em>
+    <li>A higher Probability (above 0.65) shows a high chance that Loan will be Fully Paid.</li>
+    <em><p>* Periodic review of loan performance</p ></em>
+    <li>A Probability around the mean (between 0.5 - 0.64)</li>
+    <em><p> * Close monitoring and evaluation of loan performance</p></em>
+        
+        
+
+    <h3>About the models</h3>  
+    <p>We use four machine learning models to predict outcome variables.</p> 
+    <ol class="container">
+        <li>Random Forest Classifier</li>
+        <p>Accuracy of the model is 0.9577</p>
+        <li>Boosting Classifier</li>
+        <p>Accuracy of the model is 0.8458</p>
+        <li>Logistic Regression</li>
+        <p>Accuracy of the model is 0.6512</p>
+        <li>XGBoost Classifier</li>
+        <p>Accuracy of the model is 0.6490</p>
+    </ol>
+
+
+    <p class="center" style="font-weight: bold;">
+        Predict for another Applicant
+        <button type="submit" class="button-submit"><a href="/create_ML1">Click Here</a></button>
+    </p>
+ 
+</body>
+<br>
+<hr />
+<section>
+    <h5 class="center"> Social Media Links </h5>
+    <div class="social-icons-container" >
+        <div >
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/keith-mpala-481a32128/" target="_blank"><i class="fab fa-linkedin"></i> </a>
+                <a href="https://github.com/Keith-Mpala" target="_blank"><i class="fab fa-github fa-lg"></i> </a>
+                <a href="https://rpubs.com/keith_mpala" target="_blank"><i class="fab fa-r-project"></i>  </a>
+                <a href="https://www.facebook.com/xolanikeithromeo.mpala" target="_blank"><i class="fab fa-facebook fa-lg"></i>  </a> 
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr />
+
+<footer>
+  <p>&copy; 2023 Keith Mpala Data Science. All rights reserved.</p>
+</footer>
+
+{% endblock %}
+
+<!-- -->
+<p>This application helps an institution to give more focus to loans that have a high probability of Defaulting and this income the loan portfolio
+    of an institution. </p>

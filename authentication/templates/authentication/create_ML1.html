@@ -1,0 +1,33 @@
+{% extends 'authentication/base.html' %}
+{% block title %}Modeling Page{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div >
+
+    <h5 style="font-weight: bold;">About the dataset</h5>
+    <p>Dataset is a subset of the LendingClub dataSet obtained from Kaggle. <a href="https://www.kaggle.com/wordsforthewise/lending-club"> Click Here to access the dataset</a></p>
+
+    <h5 style="font-weight: bold;">ML Algorithm used</h5>
+    <p>The machine Learning algorithm used is XGBoost algorithm for classification problem set.<a href="https://xgboost.readthedocs.io/en/stable/"> Click Here to access XGBoost Documentation</a></p>
+
+    <h4 style="font-weight: bold;">Business Problem</h4>
+    <p>Model predicts whether or not a borrower will pay back their loan. This help us to assess whether or not a potential customer is likely to pay back the loan. Our predicting variable is a binary classification of loan status, whether Fully Paid or Charge off (defaulted).</p>
+    <br>
+    <p> <em>* Please Note : It is important to make sure you feed the model with correct (realistic) customer data * </em></p>
+    <br>
+</div>
+
+<div >
+    <h4>Fill in below template with client details.</h4>
+    <form method="post">
+
+
+        {% csrf_token %} {{form|crispy}}
+        <button type="submit" class="btn btn-success" >PREDICT</button>
+    </form>
+    
+</div>
+
+{% endblock %}
+

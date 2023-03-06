@@ -1,0 +1,127 @@
+{% extends 'authentication/base.html' %}
+{% block title %}Home Page{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% load static %}
+
+<header class="header-div"> 
+    <div class="center" >
+        <br><br>
+        
+        <ul>
+            <header >
+                <h2 style="font-weight: bold;">Machine Learning Projects for Prediction | Data Science</h2>
+                
+            </header>
+            <div class="image-container" > </div>
+            <br>
+            <span style="font-weight: bold;">Keith Mpala |</span>
+            <time style="font-weight: bold;">January 01, 2023 |</time>
+            <a style="font-weight: bold;" href="https://en.wikipedia.org/wiki/Machine_learning">Machine Learning</a>
+        </ul>
+    </div>
+    <br>
+</header> 
+
+<main>
+
+    <div class="center"> 
+        <!-- <img src="{% static 'images/ml5.jpg' %}" alt="My image" style="width: 100%; height: 400px;"> -->
+        <br><br>
+        <h1 style="font-weight: bold;">What is machine learning in Banking ?</h1>
+        <p class="container">
+            In the field of banking, machine learning technology can be utilized to extract practical and valuable insights from the vast amount of data
+            that banks collect. This data includes transaction history, conversations with bank representatives, and corporate documents. With the help of
+            machine learning models, banks can effectively process and analyze this information to gain deeper insights into their customers and internal 
+            operations. By incorporating machine learning in their operations, banks can improve their fraud detection capabilities, enhance credit underwriting
+            processes, comply with regulatory requirements, and boost customer engagement.
+        </p>   
+        <!-- <h2>How is machine learning used in banking?</h2> -->
+
+        <!-- <p>Below are some of the most potent applications of Machine learning in the banking industry</p> -->
+    </div>
+
+    
+    <!-- <<img src="{% static 'images/ml5.jpg' %}" alt="My image" style="width: 100%; height: 400px;">   -->
+    <h2 style="font-weight: bold;" class="center">Some of the benefits of machine learning</h2>     
+       <br> 
+    <ol style="text-align: justify;" >
+        <li style="font-weight: bold;"> Reduced costs</li>
+        <p>* Automation of back-office operations and speed up document processing workflow.</p>
+        <li style="font-weight: bold;"> Improved personalization</li>
+        <p>* Identify patterns in customer behavior, enable deeper understanding of customer needs, and help create a highly personalized service offerings.</p>
+        <li style="font-weight: bold;"> Enhance risk management</li>
+        <p>* Machine learning algorithms are able to model how a bank will react to certain economic conditions and this allows decision makers to create more informed strategies.</p>
+        <li style="font-weight: bold;"> Improved fraud prevention</li>
+        <p>* Machine learning allows banks to proactively monitor customer behavior, identify anomalies in real time, reduce the probability of false positives, and prevent fraud. </p>
+        <li style="font-weight: bold;"> Accelerated decision-making</li>
+        <p>* Given that machine learning can process huge amounts of data much faster and more accurately than humans, banks can use ML- generated insights to make important decisions more frequently and with fewer risks.</p>
+    </ol>
+    
+    <hr>
+    <div class="container" >
+        <h3 class="center" style="font-weight: bold;"> Using Machine learning algorthim to Predict status of a Loan.</h3>
+        <br>
+        <p style="text-align: justify;">
+            Here, we use the most famous dataset to <em><strong>Predict Loan Status</strong></em> of an already existing applicant. We build a 
+            machine learning model, perfom training and validation tests to reduce bias of the model. The model predict whether an applicant 
+            is able to Fully Pay their loan or they will Default.
+        </p>
+        <p style="text-align: justify;">
+            Credit Underwriter feeds the ML - model with details of an existing applicant and the output of the model is a classification label of 
+            whether a loan will be <em><strong>Fully Paid</strong></em> or <em><strong>Charged Off (Default)</strong></em>.
+        </p>
+    </div>
+    
+    <p class="center" style="font-weight: bold;">Predict Loan Status of Client <button type="submit" class="button-submit"><a style="font-weight: bold;" href="/create_ML1"> Click Here</a>  </button></p>
+    <img src="{% static 'images/ml5.jpg' %}" alt="My image" style="width: 100%; height: 400px;">   
+
+    <!-- <div>
+        <h2>Machine Learning Prediction for Customer USERS</h2>
+        <a href="/create_ML2">Click here to go to the Model Predictions.<br><br></a>
+    </div> -->
+
+</main>
+
+    <div>
+        <h4 style="font-weight: bold;">Key Takeaways</h4>
+        <p>* Implementation steps in building a reliale maching learning model</p>
+        <h5><em><strong>Step 1: Identify your business case</strong></em></h5>
+        <p style="text-align: justify;">
+            Before deciding of ML model to build, there is need to clearly identify strategic business goals and assess how machine learning can be 
+            used to help an organization to achieve these goals. 
+        </p>
+        <h5><em><strong>Step 2: Prepare your data</strong></em></h5>
+        <p style="text-align: justify;">
+            Insights derived from machine learning are as good as the data used in the process. Data quality is therefore pivotal in developing reliable
+            machine learning tools.
+            </p>
+        <h5><em><strong>Step 3: Understand your algorithm</strong></em></h5>
+        <p style="text-align: justify;">
+            Selecting the most suitable machine learning methodology and type of algorithms bring the most value. There is also need to fully understand 
+            bias of an algorithm and work toward minimizing its effect.
+        </p>
+    </div>
+    
+
+<section>
+    <hr>
+    <h4 class="center"> Keith Mpala</h4>
+    <p class="center">I'm a Masters student of Data Science & Business Analytics at the University of Warsaw on a mission to make use of Machine Learning Tools and Technologies to improve business processes 📈.</p>
+    <div class="social-icons-container" >
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/keith-mpala-481a32128/" target="_blank"><i class="fab fa-linkedin"></i> </a>
+            <a href="https://github.com/Keith-Mpala" target="_blank"><i class="fab fa-github fa-lg"></i> </a>
+            <a href="https://rpubs.com/keith_mpala" target="_blank"><i class="fab fa-r-project"></i>  </a>
+            <a href="https://www.facebook.com/xolanikeithromeo.mpala" target="_blank"><i class="fab fa-facebook fa-lg"></i>  </a> 
+        </div>
+    </div>
+</section>
+<hr>
+<footer>
+    <p>&copy; 2023 Keith Mpala Data Science. All rights reserved.</p>
+</footer>
+
+{% endblock %}
+
+
