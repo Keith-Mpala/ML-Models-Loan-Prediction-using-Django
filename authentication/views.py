@@ -81,8 +81,8 @@ def create_ML1(request):
     preprocessor = joblib.load('preprocessor.joblib')
 
     # Load the models using open
-    #with open('xgb_model2.pickle', 'rb') as f:
-     #   xgboost_model, feature_names = pickle.load(f)
+    with open('xgb_model2.pickle', 'rb') as f:
+        xgboost_model, feature_names = pickle.load(f)
 
     # 'C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\xgb_model2.pkl'
 
@@ -92,10 +92,10 @@ def create_ML1(request):
 
             # load the models
             #preprocessor = joblib.load('preprocessor.gz')
-            xgboost_model = joblib.load('xgb_model2.gz')
-            random_forest_model = joblib.load('random_forest_model.gz')
+            #xgboost_model = joblib.load('xgb_model2.joblib')
+            #random_forest_model = joblib.load('random_forest_model.joblib')
             boosting_model = joblib.load('boosting_model.gz')
-            log_regression_model = joblib.load('log_regression_model.gz')
+            #log_regression_model = joblib.load('log_regression_model.joblib')
 
             #random_forest_model = load('random_forest_model.pkl')
             #boosting_model = load('boosting_model.pkl')
@@ -134,18 +134,17 @@ def create_ML1(request):
 
             # predictions of all models (probability predictions)
             xg_pred = xgboost_model.predict(dtest)[0]
-            rf_pred = round(random_forest_model.predict_proba(
-                input_variables)[0][1], 4)
-            bg_pred = round(boosting_model.predict_proba(
-                input_variables)[0][1], 3)
-            lg_pred = round(log_regression_model.predict_proba(
-                input_variables)[0][1], 3)
+            #rf_pred = round(random_forest_model.predict_proba(input_variables)[0][1], 4)
+            bg_pred = round(boosting_model.predict_proba(input_variables)[0][1], 3)
+            #lg_pred = round(log_regression_model.predict_proba(input_variables)[0][1], 3)
             #xg_pred = 0
+            rf_pred = None
+            lg_pred = None
 
             # Actual predictions of output variable
-            #rf_pred  = random_forest_model.predict(input_variables)
-            #bg_pred = boosting_model.predict(input_variables)
-            #lg_pred = log_regression_model.predict(input_variables)
+            #rf_pred  = random_forest_model.predict(dtest)
+            #bg_pred = boosting_model.predict(dtest)
+            #lg_pred = log_regression_model.predict(dtest)
 
             # Convert the DataFrame to HTML; classes="table" is code from css
             html_table1 = df.iloc[:, :8].to_html(index=False, header=True, classes="table").replace(
