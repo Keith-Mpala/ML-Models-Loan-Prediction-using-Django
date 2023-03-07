@@ -33,3 +33,11 @@ SCORE//Ratings//boosting_model.pkl' filter=lfs diff=lfs merge=lfs -text
 SCORE//Ratings//random_forest_model.pkl' filter=lfs diff=lfs merge=lfs -text
 'C://Users//hp//Desktop//CREDIT filter=lfs diff=lfs merge=lfs -text
 SCORE//Ratings//xgb_model2.pkl' filter=lfs diff=lfs merge=lfs -text
+SCORE//Ratings//xgb_model2.pkl' filter=lfs diff=lfs merge=lfs -text
+'C://Users//hp//Desktop//CREDIT filter=lfs diff=lfs merge=lfs -text
+'C://Users//hp//Desktop//CREDIT filter=lfs diff=lfs merge=lfs -text
+SCORE//Ratings//random_forest_model.pkl' filter=lfs diff=lfs merge=lfs -text
+'C://Users//hp//Desktop//CREDIT filter=lfs diff=lfs merge=lfs -text
+SCORE//Ratings//boosting_model.pkl' filter=lfs diff=lfs merge=lfs -text
+'C://Users//hp//Desktop//CREDIT filter=lfs diff=lfs merge=lfs -text
+SCORE//Ratings//log_regression_model.pkl' filter=lfs diff=lfs merge=lfs -text
