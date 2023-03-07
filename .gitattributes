@@ -7,3 +7,5 @@ SCORE//Ratings//random_forest_model.pkl' filter=lfs diff=lfs merge=lfs -text
 SCORE//Ratings//boosting_model.pkl' filter=lfs diff=lfs merge=lfs -text
 'C://Users//hp//Desktop//CREDIT filter=lfs diff=lfs merge=lfs -text
 SCORE//Ratings//log_regression_model.pkl' filter=lfs diff=lfs merge=lfs -text
+SCORE//Ratings//preprocessor.joblib' filter=lfs diff=lfs merge=lfs -text
+'C://Users//hp//Desktop//CREDIT filter=lfs diff=lfs merge=lfs -text
