@@ -84,6 +84,9 @@ def create_ML1(request):
     # with open('xgb_model2.pickle', 'rb') as f:
     #xgboost_model, feature_names = pickle.load(f)
 
+    # 'C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\xgb_model2.pkl'
+
+
     if request.method == 'POST':
         form = MachineLearning1Form(request.POST)
         if form.is_valid():
