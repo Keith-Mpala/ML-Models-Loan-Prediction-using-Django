@@ -86,7 +86,6 @@ def create_ML1(request):
 
     # 'C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\xgb_model2.pkl'
 
-
     if request.method == 'POST':
         form = MachineLearning1Form(request.POST)
         if form.is_valid():
@@ -135,9 +134,12 @@ def create_ML1(request):
 
             # predictions of all models (probability predictions)
             xg_pred = xgboost_model.predict(dtest)[0]
-            rf_pred = round(random_forest_model.predict_proba(input_variables)[0][1], 4)
-            bg_pred = round(boosting_model.predict_proba(input_variables)[0][1], 3)
-            lg_pred = round(log_regression_model.predict_proba(input_variables)[0][1], 3)
+            rf_pred = round(random_forest_model.predict_proba(
+                input_variables)[0][1], 4)
+            bg_pred = round(boosting_model.predict_proba(
+                input_variables)[0][1], 3)
+            lg_pred = round(log_regression_model.predict_proba(
+                input_variables)[0][1], 3)
             #xg_pred = 0
 
             # Actual predictions of output variable
