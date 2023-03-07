@@ -81,8 +81,8 @@ def create_ML1(request):
     preprocessor = joblib.load('preprocessor.joblib')
 
     # Load the models using open
-    with open('xgb_model2.pickle', 'rb') as f:
-        xgboost_model, feature_names = pickle.load(f)
+    #with open('xgb_model2.pickle', 'rb') as f:
+     #   xgboost_model, feature_names = pickle.load(f)
 
     # 'C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\xgb_model2.pkl'
 
@@ -92,14 +92,14 @@ def create_ML1(request):
 
             # load the models
             #preprocessor = joblib.load('preprocessor.gz')
-            #xgboost_model = joblib.load('xgb_model2.gz')
-            #random_forest_model = joblib.load('random_forest_model.gz')
-            #boosting_model = joblib.load('boosting_model.gz')
-            #log_regression_model = joblib.load('log_regression_model.gz')
+            xgboost_model = joblib.load('xgb_model2.gz')
+            random_forest_model = joblib.load('random_forest_model.gz')
+            boosting_model = joblib.load('boosting_model.gz')
+            log_regression_model = joblib.load('log_regression_model.gz')
 
-            random_forest_model = load('random_forest_model.pkl')
-            boosting_model = load('boosting_model.pkl')
-            log_regression_model = load('log_regression_model.pkl')
+            #random_forest_model = load('random_forest_model.pkl')
+            #boosting_model = load('boosting_model.pkl')
+            #log_regression_model = load('log_regression_model.pkl')
 
             # access clean form data after validation is performed
             Loan_amount = form.cleaned_data['Loan_amount']
