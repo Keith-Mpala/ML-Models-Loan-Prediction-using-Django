@@ -147,7 +147,7 @@ def create_ML1(request):
             #rf_pred = round(random_forest_model.predict_proba(input_variables)[0][1], 4)
             bg_pred = round(boosting_model.predict_proba(input_variables)[0][1], 3)
             #lg_pred = round(log_regression_model.predict_proba(input_variables)[0][1], 3)
-            #xg_pred = 0
+            xg_pred = 0
             rf_pred = None
             lg_pred = None
 
