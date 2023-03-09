@@ -137,13 +137,13 @@ def create_ML1(request):
             df = pd.DataFrame(input_variables, columns=feature_names)
 
             # transform new data using preprocessor model
-            X_test = preprocessor.fit_transform(df)
+            #X_test = preprocessor.fit_transform(df)
 
             # create a dmatrix for xgboost model
-            dtest = xgb.DMatrix(X_test)
+            #dtest = xgb.DMatrix(X_test)
 
             # predictions of all models (probability predictions)
-            xg_pred = xgboost_model.predict(dtest)[0]
+           # xg_pred = xgboost_model.predict(dtest)[0]
             #rf_pred = round(random_forest_model.predict_proba(input_variables)[0][1], 4)
             bg_pred = round(boosting_model.predict_proba(input_variables)[0][1], 3)
             #lg_pred = round(log_regression_model.predict_proba(input_variables)[0][1], 3)
