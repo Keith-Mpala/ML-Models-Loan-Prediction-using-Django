@@ -76,9 +76,10 @@ def create_ML1(request):
     from sklearn.tree import DecisionTreeClassifier
     from sklearn.pipeline import Pipeline
     from joblib import load
-
-    # load the preprocessor
-    preprocessor = joblib.load('preprocessor.joblib')
+    from sklearn.compose import ColumnTransformer
+    from sklearn.impute import SimpleImputer
+    from sklearn.preprocessing import StandardScaler, OneHotEncoder
+    
 
     # Load the models using open
     with open('xgb_model2.pickle', 'rb') as f:
@@ -95,6 +96,9 @@ def create_ML1(request):
     if request.method == 'POST':
         form = MachineLearning1Form(request.POST)
         if form.is_valid():
+
+            # load the preprocessor
+            preprocessor = joblib.load('preprocessor.joblib')
 
             # load the models
             #preprocessor = joblib.load('preprocessor.gz')
@@ -133,7 +137,7 @@ def create_ML1(request):
             df = pd.DataFrame(input_variables, columns=feature_names)
 
             # transform new data using preprocessor model
-            X_test = preprocessor.transform(df)
+            X_test = preprocessor.fit_transform(df)
 
             # create a dmatrix for xgboost model
             dtest = xgb.DMatrix(X_test)
