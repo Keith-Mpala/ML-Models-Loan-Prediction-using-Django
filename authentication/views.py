@@ -89,7 +89,8 @@ def create_ML1(request):
     # git filter-branch --tree-filter 'rm -rf C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\random_forest_model.pkl' HEAD
     # git-filter-repo --path random_forest_model.pkl --invert-paths
 # git clone <repository-url>
-
+# git filter-repo --path random_forest_model.pkl --invert-paths --force
+#git remote add origin https://github.com/Keith-Mpala/ML-Models-Loan-Prediction-using-Django.git
 
     if request.method == 'POST':
         form = MachineLearning1Form(request.POST)
