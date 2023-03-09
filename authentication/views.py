@@ -86,6 +86,7 @@ def create_ML1(request):
 
     # 'C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\xgb_model2.pkl'
    # git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\random_forest_model.pkl' --prune-empty --tag-name-filter cat -- --all
+    # git filter-branch --tree-filter 'rm -rf C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\xgb_model2.pkl' HEAD
 
     if request.method == 'POST':
         form = MachineLearning1Form(request.POST)
