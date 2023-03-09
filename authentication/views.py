@@ -99,9 +99,9 @@ def create_ML1(request):
             # load the models
             #preprocessor = joblib.load('preprocessor.gz')
             #xgboost_model = joblib.load('xgb_model2.joblib')
-            random_forest_model = joblib.load('random_forest_model.joblib')
+            #random_forest_model = joblib.load('random_forest_model.joblib')
             boosting_model = joblib.load('boosting_model.gz')
-            log_regression_model = joblib.load('log_regression_model.gz')
+            #log_regression_model = joblib.load('log_regression_model.gz')
 
             #random_forest_model = load('random_forest_model.pkl')
             #boosting_model = load('boosting_model.pkl')
