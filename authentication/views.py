@@ -14,15 +14,12 @@ import pandas as pd
 
 # Create your views here.
 
-
-# redirect us to login if not logged in already
-@login_required(login_url="/login")
 def home(request):
     return render(request, "authentication/home.html")
 
 
 # redirect us to login if not logged in already
-@login_required(login_url="/login")
+# @login_required(login_url="/login")
 def reviews(request):
     comments = Comment.objects.all()  # this gives all the comments that we have
     if request.method == "POST":
@@ -67,7 +64,8 @@ def sign_up(request):
         form = RegisterForm()
     return render(request, "registration/sign_up.html", {"form": form})
 
-
+# if not logged in, this redirects us to login if we click predict
+@login_required(login_url="/login")
 def create_ML1(request):
 
     import pickle
