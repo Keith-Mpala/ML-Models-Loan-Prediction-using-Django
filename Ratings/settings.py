@@ -131,9 +131,8 @@ USE_TZ = True
 
 # included authentication for directory when running collectstatic
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'authentication', 'static'),
+    os.path.join(BASE_DIR,  'static'), # 'authentication',
 ]
-
 
 STATIC_URL = '/static/'
 
