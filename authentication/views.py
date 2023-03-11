@@ -35,7 +35,7 @@ def reviews(request):
 
 
 # redirects to login if not supposed to access comments
-@permission_required("authentication.add_comment", login_url="/login", raise_exception=True)
+#@permission_required("authentication.add_comment", login_url="/login", raise_exception=True)
 # if not logged in, this redirects us to login if we click comment
 # @login_required(login_url="/login")
 def create_comment(request):
@@ -83,11 +83,10 @@ def create_ML1(request):
     with open('xgb_model2.pickle', 'rb') as f:
         xgboost_model, feature_names = pickle.load(f)
 
-    # 'C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\xgb_model2.pkl'
-   # git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\random_forest_model.pkl' --prune-empty --tag-name-filter cat -- --all
-    # git filter-branch --tree-filter 'rm -rf C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\random_forest_model.pkl' HEAD
-    # git-filter-repo --path random_forest_model.pkl --invert-paths
-# git clone <repository-url>
+# link for models 'C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\xgb_model2.pkl'
+# git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\random_forest_model.pkl' --prune-empty --tag-name-filter cat -- --all
+# git filter-branch --tree-filter 'rm -rf C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\random_forest_model.pkl' HEAD
+# git-filter-repo --path random_forest_model.pkl --invert-paths
 # git filter-repo --path random_forest_model.pkl --invert-paths --force
 #git remote add origin https://github.com/Keith-Mpala/ML-Models-Loan-Prediction-using-Django.git
 
