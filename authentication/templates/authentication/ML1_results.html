@@ -6,16 +6,16 @@
 
 
 <body>
-    <h3 class="center"> <strong>Machine Learning Model Results</strong> </h3>
+    <h3 class="center"> <strong>Business Decision Modelling Results</strong> </h3>
     <p>
-        Results of the model predictions are in probabilistic form and they determine a binary classification 
+        Results of the Model predictions are in Probabilistic form and they determine a binary classification 
         result of whether Loan is will be Fully Paid or Defaulted based on client loan profile. 
     </p>      
     <div class="container">
         <p>
             * It is paramount to understand and interpret the results of the model for the model to be effective in decision-making  *
         </p>
-        <p>* Please verify Loan details are correctly entered *</p>
+        <p>* Please verify Client details are correctly entered *</p>
     </div>
    
     <h4 class="center"><strong>Loan Data Inputs</strong> </h4>
@@ -30,15 +30,16 @@
     <br>
 
 <strong></strong>
-    <div class="center" class="container">
-        <h4> <strong> Probability of Fully Paid</strong> </h4>
+    <div class="container">
+        <h4> <strong> Machine Learning Model Results </strong> </h4>
+        <p> * Probability of Loan being Fully Paid</p>
 
-        <p>Random Forest Classifier :: <strong>{{ rf_pred }}</strong></p>
-        <p>Boosting Classifier :: <strong>{{ bg_pred }}</strong></p>
-        <p>Xgboost Classifier :: <strong>{{ xg_pred }}</strong></p>
-        <p>Logistic Regression :: <strong>{{ lg_pred }}</strong></p>
+        <p>Boosting Classifier  :: <strong>{{ bg_pred }}</strong></p>
+        <p>CatBoost Classifier  :: <strong>{{ ct_pred }}</strong></p>
+        <p>XGBoost Classifier   :: <strong>{{ xg_pred }}</strong></p>
+        <p>Logistic Regression  :: <strong>{{ lg_pred }}</strong></p>
     </div>
-    <br>
+
     <h3>Interpretation of Model results</h3>
     <li>A lower Probability (below 0.5) shows a high chance that Loan will be Charged Off (defaulted).</li>
     <em><p>* Further action needs to be taken for such loans.</p></em>
@@ -52,10 +53,10 @@
     <h3>About the models</h3>  
     <p>We use four machine learning models to predict outcome variables.</p> 
     <ol class="container">
-        <li>Random Forest Classifier</li>
-        <p>Accuracy of the model is 0.9577</p>
         <li>Boosting Classifier</li>
         <p>Accuracy of the model is 0.8458</p>
+        <li>Cat Boost Classifier</li>
+        <p>Accuracy of the model is 0.6844</p>
         <li>Logistic Regression</li>
         <p>Accuracy of the model is 0.6512</p>
         <li>XGBoost Classifier</li>
@@ -94,5 +95,3 @@
 {% endblock %}
 
 <!-- -->
-<p>This application helps an institution to give more focus to loans that have a high probability of Defaulting and this income the loan portfolio
-    of an institution. </p>

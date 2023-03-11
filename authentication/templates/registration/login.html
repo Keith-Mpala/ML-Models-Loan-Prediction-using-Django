@@ -1,5 +1,8 @@
 {% extends 'authentication/base.html' %} {% block title%}Login{% endblock %}
 {% load crispy_forms_tags %} {% block content %}
+
+<p class="center">Please log in to access this Page!!</p>
+<br>
 <form method="post">
     {% csrf_token %} {{form|crispy}}
     <p>Don't have an account? Create one <a href="/sign_up">Here</a>!</p>

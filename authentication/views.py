@@ -77,7 +77,7 @@ def create_ML1(request):
     from sklearn.compose import ColumnTransformer
     from sklearn.impute import SimpleImputer
     from sklearn.preprocessing import StandardScaler, OneHotEncoder
-    
+    import catboost as ctb
 
     # Load the models using open
     with open('xgb_model2.pickle', 'rb') as f:
@@ -101,12 +101,12 @@ def create_ML1(request):
             #preprocessor = joblib.load('preprocessor.gz')
             #xgboost_model = joblib.load('xgb_model2.joblib')
             #random_forest_model = joblib.load('random_forest_model.joblib')
-            boosting_model = joblib.load('boosting_model.gz')
+            #boosting_model = joblib.load('boosting_model.gz')
             #log_regression_model = joblib.load('log_regression_model.gz')
 
-            #random_forest_model = load('random_forest_model.pkl')
-            #boosting_model = load('boosting_model.pkl')
-            #log_regression_model = load('log_regression_model.pkl')
+            cat_boost_model = load('cat_boost_model.pkl')
+            boosting_model = joblib.load('boosting_model2.gz')
+            log_regression_model = joblib.load('log_regression_model2.joblib')
 
             # access clean form data after validation is performed
             Loan_amount = form.cleaned_data['Loan_amount']
@@ -134,20 +134,20 @@ def create_ML1(request):
             df = pd.DataFrame(input_variables, columns=feature_names)
 
             # transform new data using preprocessor model
-            #X_test = preprocessor.fit_transform(df)
+            X_test = preprocessor.fit_transform(df)
 
             # create a dmatrix for xgboost model
-            #dtest = xgb.DMatrix(X_test)
+            dtest = xgb.DMatrix(X_test)
 
             # predictions of all models (probability predictions)
-           # xg_pred = xgboost_model.predict(dtest)[0]
-            #rf_pred = round(random_forest_model.predict_proba(input_variables)[0][1], 4)
-            #bg_pred = round(boosting_model.predict_proba(input_variables)[0][1], 3)
-            #lg_pred = round(log_regression_model.predict_proba(input_variables)[0][1], 3)
-            xg_pred = 0
-            rf_pred = None
-            lg_pred = None
-            bg_pred = None
+            xg_pred = round(xgboost_model.predict(dtest)[0],4)
+            ct_pred = round(cat_boost_model.predict_proba(input_variables)[0][1], 4)
+            bg_pred = round(boosting_model.predict_proba(input_variables)[0][1],4)
+            lg_pred = round(log_regression_model.predict_proba(input_variables)[0][1], 4)
+            #xg_pred = 0
+            #rf_pred = None
+            #lg_pred = None
+            #bg_pred = None
 
             # Actual predictions of output variable
             #rf_pred  = random_forest_model.predict(dtest)
@@ -171,7 +171,7 @@ def create_ML1(request):
             #ans = 'Paid Off'
 
             # get results to be displayed in html content
-            context = {'form': form, 'xg_pred': xg_pred, 'rf_pred': rf_pred, 'bg_pred': bg_pred,
+            context = {'form': form, 'xg_pred': xg_pred, 'ct_pred': ct_pred, 'bg_pred': bg_pred,
                        'lg_pred': lg_pred, 'html_table1': html_table1, 'html_table2': html_table2}
 
             return render(request, 'authentication/ML1_results.html', context)
