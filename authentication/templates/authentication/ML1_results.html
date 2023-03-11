@@ -34,21 +34,21 @@
         <h4> <strong> Machine Learning Model Results </strong> </h4>
         <p> * Probability of Loan being Fully Paid</p>
 
-        <p>Boosting Classifier  :: <strong>{{ bg_pred }}</strong></p>
-        <p>CatBoost Classifier  :: <strong>{{ ct_pred }}</strong></p>
-        <p>XGBoost Classifier   :: <strong>{{ xg_pred }}</strong></p>
-        <p>Logistic Regression  :: <strong>{{ lg_pred }}</strong></p>
+        <li><p><em>Boosting Classifier</em>  :: <strong>{{ bg_pred }}</strong></p></li>
+        <li><p><em>CatBoost Classifier</em>  :: <strong>{{ ct_pred }}</strong></p></li>
+        <li><p><em>XGBoost Classifier</em>   :: <strong>{{ xg_pred }}</strong></p></li>
+        <li><p><em>Logistic Regression</em>  :: <strong>{{ lg_pred }}</strong></p></li>
     </div>
 
-    <h3>Interpretation of Model results</h3>
-    <li>A lower Probability (below 0.5) shows a high chance that Loan will be Charged Off (defaulted).</li>
+    <h3>Interpretation of Model Results</h3>
+    <li>A lower Probability <strong>(below 0.5)</strong> shows a high chance that Loan will be Charged Off (defaulted).</li>
     <em><p>* Further action needs to be taken for such loans.</p></em>
-    <li>A higher Probability (above 0.65) shows a high chance that Loan will be Fully Paid.</li>
+    <li>A higher Probability <strong>(above 0.65)</strong> shows a high chance that Loan will be Fully Paid.</li>
     <em><p>* Periodic review of loan performance</p ></em>
-    <li>A Probability around the mean (between 0.5 - 0.64)</li>
+    <li>A Probability around the mean <strong>(between 0.5 - 0.64)</strong></li>
     <em><p> * Close monitoring and evaluation of loan performance</p></em>
         
-        
+    <br>
 
     <h3>About the models</h3>  
     <p>We use four machine learning models to predict outcome variables.</p> 

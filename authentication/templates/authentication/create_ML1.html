@@ -3,15 +3,15 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div >
+<div class="center">
 
-    <h5 style="font-weight: bold;">About the dataset</h5>
+    <h4 style="font-weight: bold;">About the dataset</h4>
     <p>Dataset is a subset of the LendingClub dataSet obtained from Kaggle. <a href="https://www.kaggle.com/wordsforthewise/lending-club"> Click Here to access the dataset</a></p>
 
-    <h5 style="font-weight: bold;">ML Algorithm used</h5>
-    <p>The machine Learning algorithm used is XGBoost algorithm for classification problem set.<a href="https://xgboost.readthedocs.io/en/stable/"> Click Here to access XGBoost Documentation</a></p>
+    <h5 style="font-weight: bold;">Machine Learning Models used</h5>
+    <p>Since our predictive variable is a Binary classification, therefore machine Learning algorithms used are Classifier algorithms such as <a href="https://xgboost.readthedocs.io/en/stable/"> XGBoost </a>, <a href="https://catboost.ai/en/docs/concepts/python-reference_catboostclassifier"> CatBoost </a>, <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html"> Boosting Classifier </a> & <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"> Logistic Regression </a> .
 
-    <h4 style="font-weight: bold;">Business Problem</h4>
+    <h5 style="font-weight: bold;">Business Problem</h5>
     <p>Model predicts whether or not a borrower will pay back their loan. This help us to assess whether or not a potential customer is likely to pay back the loan. Our predicting variable is a binary classification of loan status, whether Fully Paid or Charge off (defaulted).</p>
     <br>
     <p> <em>* Please Note : It is important to make sure you feed the model with correct (realistic) customer data * </em></p>
@@ -21,8 +21,7 @@
 <div >
     <h4>Fill in below template with client details.</h4>
     <form method="post">
-
-
+        
         {% csrf_token %} {{form|crispy}}
         <button type="submit" class="btn btn-success" >PREDICT</button>
     </form>

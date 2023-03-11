@@ -80,7 +80,7 @@ def create_ML1(request):
     import catboost as ctb
 
     # Load the models using open
-    with open('xgb_model2.pickle', 'rb') as f:
+    with open('xgb_model3.pickle', 'rb') as f:
         xgboost_model, feature_names = pickle.load(f)
 
 # link for models 'C:\\Users\\hp\\Desktop\\CREDIT SCORE\\Ratings\\xgb_model2.pkl'
