@@ -35,7 +35,7 @@ def reviews(request):
 
 
 # redirects to login if not supposed to access comments
-@permission_required("authentication.add_comment", login_url="/login", raise_exception=True)
+@permission_required("authentication.add_comment", login_url="/login")#, raise_exception=True
 # if not logged in, this redirects us to login if we click comment
 @login_required(login_url="/login")
 def create_comment(request):
