@@ -1,0 +1,215 @@
+
+/* links css  */
+.social-icons-container {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.social-icons a:last-child {
+  margin-right: 10px;
+}
+
+
+.header-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+} 
+
+
+/* center for texts  */
+.center {
+  text-align: center;
+}
+/* title div and footer  */
+.background-div {
+  background-color: rgb(241, 244, 245);
+} 
+.header-div {
+  background-color: rgb(106, 135, 145);
+} 
+
+/* Button clicks  */
+.button-submit {
+  background-color: rgb(145, 181, 194);
+  color: rgb(87, 29, 29);
+  padding: 8px 15px; 
+  border-radius: 15px; 
+  border: none; 
+  cursor: pointer;
+}
+
+
+.image-container {
+  background-image: url("/static/images/km.a4a4d8ab4982.jpeg");
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0px 0px 0px 4px #4f86a8;
+  margin: 0 auto;
+}
+
+
+.img {
+  width: 100%;
+  height: auto;    
+}
+
+/* paragraph design  */
+
+.container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 20px;
+}
+
+h1 {
+text-align: center;
+font-size: 36px;
+margin-bottom: 20px;
+}
+
+p {
+font-size: 18px;
+line-height: 1.5;
+margin-bottom: 20px;
+}
+
+/* lists  */
+ol {
+list-style-type: none;
+counter-reset: my-counter;
+margin-left: 0;
+padding-left: 0;
+}
+
+ol li {
+counter-increment: my-counter;
+margin-bottom: 15px;
+padding-left: 40px;
+position: relative;
+}
+
+ol li:before {
+content: counter(my-counter);
+font-weight: bold;
+font-size: 24px;
+line-height: 1;
+background-color: rgb(106, 135, 145);
+color: white;
+width: 30px;
+height: 30px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+position: absolute;
+left: 0;
+top: 0;
+} 
+
+/* make itelised text  */
+.em {
+  font-style: italic;
+}
+
+/* Apply styles to all tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Apply styles to table headers */
+th {
+  background-color: #333;
+  color: rgb(134, 51, 51);
+  font-weight: bold;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+/* Apply styles to table data */
+td {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+/* Apply styles to the page header */
+.page-header {
+  background-color: #333;
+  color: rgb(133, 65, 65);
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Apply styles to the data input section */
+.data-input {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+/* Apply styles to the submit button */
+.submit-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+/* Apply styles to form input fields */
+input[type=text], select {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+}
+
+/* Apply styles to form label fields */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Apply styles to error messages */
+.error-message {
+  color: #FF0000;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Apply styles to success messages */
+.success-message {
+  color: #008000;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
